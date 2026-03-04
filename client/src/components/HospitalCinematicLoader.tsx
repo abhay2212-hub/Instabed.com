@@ -279,9 +279,7 @@ function AtmosphereParticles({ count = 300 }: { count?: number }) {
             <bufferGeometry>
                 <bufferAttribute
                     attach="attributes-position"
-                    count={count}
-                    array={positions}
-                    itemSize={3}
+                    args={[positions, 3]}
                 />
             </bufferGeometry>
             <pointsMaterial
@@ -348,9 +346,7 @@ function ECGPulse({ phase }: { phase: number }) {
                 <bufferGeometry>
                     <bufferAttribute
                         attach="attributes-position"
-                        count={pointCount}
-                        array={positions}
-                        itemSize={3}
+                        args={[positions, 3]}
                     />
                 </bufferGeometry>
                 <lineBasicMaterial color="#22D3EE" linewidth={2} transparent opacity={0.9} />
